@@ -174,7 +174,7 @@
                                 <p class="text-dark mt-3 f-20 mb-0"><b>Introduction</b></p>
 <!--                                <hr class="mt-4">-->
 
-                                <p class="text-dark mt-3">As an important part of Chinese traditional culture, seal cutting carries national spirit and cultural connotation. The Seal Cutting Display System aims to solve the problem of the lack of popularization of seal carving education in the post-epidemic era, promote the knowledge of seal carving in the form of offline interactive exhibition, and help school students and exhibitors to understand the culture and history of seal cutting and experience the charm of seal characters. It has high value of popularization of science.
+                                <p class="text-dark mt-3">As an important part of Chinese traditional culture, seal cutting carries the national spirit and cultural connotation. The Seal Cutting Display System aims to solve the problem of the lack of popularization of seal carving education in the post-epidemic era, promote the knowledge of seal carving in the form of offline interactive exhibition, and help school students and exhibitors to understand the culture and history of seal cutting and experience the charm of seal characters. It has a high value in the popularization of science.
                                 </p>
                                 <p class="text-dark">
                                     The seal cutting display system is able to bring a more powerful experience to users compared to traditional exhibitions. The system is displayed in an offline technology exhibition, connecting iPads, interactive large screens, and mobile devices (mobile or otherwise) through the <b>Web</b>. With this platform, users can have real-time interaction with the big screen and experience the fun of interacting with the bubble components in the online physical world created. At the same time, photos are taken and processed by the system to get a page marker, which helps users understand the connection between human action and seal characters while keeping a memory of the experience for them.
@@ -200,7 +200,7 @@
                             <div class="blog-info mt-2 p-2">
                                 <p class="text-dark">
                                     The B/S architecture was chosen for the development of the system.
-                                    The front-end development uses HTML5, CSS and JavaScript, and the JS part is mainly developed using the jQuery library, while several packaged JS libraries such as Tensorflow.js and Matter.js are used to assist in realizing the functional requirements within the project. The back-end mainly uses Flask web application framework to implement related APIs.
+                                    The front-end development uses HTML5, CSS and JavaScript, and the JS part is mainly developed using the jQuery library, while several packaged JS libraries such as Tensorflow.js and Matter.js are used to assist in realizing the functional requirements within the project. The back end mainly uses the Flask web application framework to implement related APIs.
                                 </p>
                             </div>
 
@@ -231,7 +231,7 @@
                                 <p class="text-muted">
                                     (1) User selection module
                                     <br>It contains the functions of selecting and deselecting seal characters.
-                                    <br>Obtain user-selected seal characters and design the signal transmission method and logic of seal character selection in combination with database. Launch the corresponding unlocking process of the seal character for the user's selection. Design CSS animation to increase user interface performance.
+                                    <br>Obtain user-selected seal characters and design the signal transmission method and logic of seal character selection in combination with the database. Launch the corresponding unlocking process of the seal character for the user's selection--design CSS animation to increase user interface performance.
                                 </p>
                                 <p class="text-muted">
                                     (2) Posture recognition and scoring module
@@ -240,12 +240,12 @@
                                 </p>
                                 <p class="text-muted">
                                     (3) Large screen interaction module
-                                    <br>It includes bubble interaction and bubble display function.
+                                    <br>It includes bubble interaction and bubble display functions.
                                     <br>According to the user's unlocked seal character to generate the corresponding bubble components, using the front-end physics engine related technology to design the bubble structure and drawing performance, to achieve bubble component generation, disappearance, collision, regular movement, fusion and interaction with the user and other functions, designed to enhance the user interface components expressive power.
                                 </p>
                                 <p class="text-muted">
                                     (4) Page Marker generation module
-                                    <br>It includes image selection and saving function.
+                                    <br>It includes image selection and saving functions.
                                     <br>The image processing is carried out for the images taken by users, and the image processing process including target detection, portrait keying and other functions is designed in conjunction with the database to realize the function of generating customized tabs based on user images.
                                 </p>
                             </div>
@@ -311,7 +311,7 @@
 
                             <div class="blog-info mt-2 p-2">
                                 <p class="text-dark">
-                                    Combined application of Paper.js and Matter.js, the key point in Paper as the base component of the physics engine, and use the constraint component in Matter (Matter.Constraint) to connect the key point component, so that when the collision of the composite component occurs, the force effect on each part of the component will be due to the properties and position of the constraint component Constraint component, so that when the collision of the composite component occurs, the force effect of each part of the component will change due to the properties and position of the constraint component, thus producing a small deformation in the bubble collision effect, as shown in Figure 4.5, which can increase the bubble expression and more realistic.
+                                    Combined application of Paper.js and Matter.js, the key point in Paper as the base component of the physics engine, and use the constraint component in Matter (Matter.Constraint) to connect the key point component, so that when the collision of the composite component occurs, the force effect on each part of the component will be due to the properties and position of the constraint component, so that when the collision of the composite component occurs, the force effect of each part of the component will change due to the properties and position of the constraint component, thus producing a small deformation in the bubble collision effect, as shown in Figure 4.5, which can increase the bubble expression and more realistic.
                                 </p>
                             </div>
 
@@ -348,7 +348,7 @@
                                 <p class="text-dark">
                                     <b>Get the captured image</b> get the captured image and the corresponding action id from the database
                                     <br><b>Target detection</b> identify the portrait in the image
-                                    <br><b>Weight calculation and filtering</b> weight calculation based on the size of the recognition frame and the distance to the middle of the image, and filter the target portrait recognition frame in reverse order according to the weight value
+                                    <br><b>Weight calculation and filtering</b> weight calculation based on the size of the recognition frame and the distance to the middle of the image, and filtering the target portrait recognition frame in reverse order according to the weight value
                                     <br><b>Crop the image</b> crop to get the corresponding recognition frame area
                                     <br><b>Key the portrait</b> remove the background
                                     <br><b>Get the mask</b> extract the pure black silhouette of the portrait (masked area)
