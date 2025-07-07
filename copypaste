@@ -1,0 +1,77 @@
+# sandblast
+
+Unity6 URP17
+
+Virtual reality
+
+sandblast function
+
+- UV based mask drawing
+    
+    The system begins by detecting the UV coordinates of the surface being pointed to, typically using raycasting. Once the UV is obtained, a custom shape—such as a circular brush or a stylized mask—is drawn onto a RenderTexture at that UV position. This Render Texture acts as a dynamic mask used to control layered materials. Drawing is usually performed using, or a custom shader that accumulates strokes over time.
+    
+- Channel-Based Material Control
+    
+    The mask texture utilizes separate color channels (R, G, B, A) to manage different visual effects:
+    
+    - **Red (R)** for painted regions or base layer blending.
+    - **Green (G)** for hover highlights or interactive feedback.
+- **VR Input: Angle and Distance Interaction**
+    
+    In a VR environment, the angle between the controller and the surface, along with the distance from the surface, can be used to dynamically influence the painting behavior:
+    
+    - **Angle** affects the brush shape or strength—direct angles may produce circular strokes, while shallow angles could create elongated or skewed strokes.
+    - **Distance** can control brush size, falloff, or whether the stroke is applied at all—only allowing painting within a certain range.
+- **Shader Integration and Real-Time Feedback**
+    
+    The mask texture is passed into the object's material and interpreted via shader code. The shader reads the different channels of the mask and adjusts surface properties such as color, roughness, or noise, shape parameters in real time, providing immediate visual feedback to the user.
+    
+
+**Outline and hover effect**
+
+URP17 render graph 
+
+renderFeature
+
+Frame Debugger
+
+Profiler
+
+
+# Mediapipe & UDP
+
+### Pose Recognition with MediaPipe & UDP in Unity (Concept Overview)
+
+In this system, **MediaPipe** is used to perform real-time **pose recognition**, while **UDP** acts as the communication bridge to Unity for triggering responses based on detected gestures.
+
+### 📌 MediaPipe for Pose Recognition
+
+MediaPipe processes live camera input to detect and track **human body landmarks**, such as wrists, shoulders, elbows, etc. Each point is represented by spatial coordinates (typically 2D on the image plane, or optionally 3D).
+
+### ✋ Raise Hand Gesture Logic
+
+To recognize a raised-hand gesture, the system compares the position of hand and shoulder. If it detected as a raise-hand gesture, then transmits a signal via UDP protocol, as is chosen for its low-latency and lightweight nature.
+
+This method allows for **natural user interactions** in Unity projects, particularly in VR/AR, training simulations, or gesture-based interfaces, without relying on controllers.
+
+### Demo Overview: Interactive Pose Game for Eye Fatigue Relief
+
+This demo showcases a **large-screen interactive game** that uses **camera-based pose recognition** to encourage users to move and stretch. By detecting simple gestures—like raising a hand—we aim to promote light physical activity as a way to **relieve eye fatigue** caused by long screen time.
+
+Using **MediaPipe** for real-time pose tracking and **UDP** to send gesture signals to Unity, the system responds instantly to user movements. This creates a fun and engaging experience that helps users take healthy breaks through natural interaction.
+
+TA part
+
+### Stylized Shader – Basic Principle
+
+1. **Lighting Segmentation**
+    
+    Calculate surface brightness, then divide it into fixed bands (e.g., shadow, midtone, highlight) to create a flat, toon-style look.
+    
+2. **Outline Rendering and Noise Distortion**
+    
+    Add outlines using screen-space edge detection to highlight object edges and apply noise to add a dynamic visual effect
+    
+3. **World-Space Masking**
+    
+    Use world-space position to create a mask to blend or switch between different original material of the object and the toon effect shader.
